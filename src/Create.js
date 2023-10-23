@@ -23,7 +23,8 @@ const Create = () => {
 	}, [tasks]);
 
 	const [id, setId] = useState(0);
-	const [orderId, setOrderId] = useState(0);
+	const [orderNumber, setOrderNumber] = useState("");
+	const [clientName, setClientName] = useState("");
 	const [title, setTitle] = useState("");
 	const [lastModifiedDate, setLastModifiedDate] = useState(new Date().toLocaleDateString());
 	// new Date().toLocaleDateString()
@@ -32,18 +33,95 @@ const Create = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		let wjazdzestawu = false;
-		let demontaz = false;
-		let operacja1 = false;
+		let wjazdZestawu = false;
+		let demontazMaznic = false;
+		let demontazLozysk = false;
+		let czyszczenieZestawu = false;
+		let czyszczenieMaznic = false;
+		let czyszczenieLozysk = false;
+		let kolaBose = "-";
+		let os = "-";
+		let koloZebate = "-";
+		let opdmm1 = false;
+		let rzk1 = false;
+		let wymienicKolaBose = false;
+		let zzk1 = false;
+		let opdmm2 = false;
+		let rzk2 = false;
+		let wymienicOs = false;
+		let zzk2 = false;
+		let oczyscic = false;
+		let rzk3 = false;
+		let wymienicKoloZebate = false;
+		let zzk3 = false;
+		let toczycObrecze = false;
+
+		let weryfikacjaMaznic = "-";
+		let pdmonm1 = false;
+		let wymienicMaznice = false;
+		let pdmonm2 = false;
+
+		let przekazacDoRegeneracji = false;
+		let weryfikacjaPoRegeneracji = "-";
+		let pdmonm3 = false;
+		let reklamacja = false;
+
+		let weryfikacjaLozysk = "-";
+		let pdmonm4 = false;
+		let wymienicLozyska = false;
+		let pdmonm5 = false;
+
+		let kontrolaJakosci = false;
+		let montazLozysk = false;
+		let montazMaznic = false;
+		let malowanie = false;
+		let wysylkaDoKlienta = false;
 
 		const newTask = {
 			id,
-			orderId,
+			orderNumber,
+			clientName,
 			title,
-			wjazdzestawu,
-			demontaz,
-			operacja1,
+			wjazdZestawu,
+			demontazMaznic,
+			demontazLozysk,
+			czyszczenieZestawu,
+			czyszczenieMaznic,
+			czyszczenieLozysk,
 			lastModifiedDate,
+			kolaBose,
+			os,
+			koloZebate,
+			opdmm1,
+			rzk1,
+			wymienicKolaBose,
+			zzk1,
+			opdmm2,
+			rzk2,
+			wymienicOs,
+			zzk2,
+			oczyscic,
+			rzk3,
+			wymienicKoloZebate,
+			zzk3,
+			toczycObrecze,
+			weryfikacjaLozysk,
+			pdmonm4,
+			wymienicLozyska,
+			pdmonm5,
+			weryfikacjaMaznic,
+			pdmonm1,
+			wymienicMaznice,
+			pdmonm2,
+			przekazacDoRegeneracji,
+			weryfikacjaPoRegeneracji,
+			pdmonm3,
+			reklamacja,
+			kontrolaJakosci,
+			montazLozysk,
+			montazMaznic,
+			malowanie,
+			wysylkaDoKlienta,
 		};
 
 		fetch("http://localhost:8000/tasks/", {
@@ -78,11 +156,24 @@ const Create = () => {
 					<form onSubmit={handleSubmit}>
 						<div className="task-title">
 							<label>Order ID:</label>
+							<h3>{id}</h3>
+						</div>
+						<div className="task-title">
+							<label>Order Number:</label>
 							<input
 								type="text"
 								required
-								value={orderId}
-								onChange={(e) => setOrderId(e.target.value)}
+								value={orderNumber}
+								onChange={(e) => setOrderNumber(e.target.value)}
+							/>
+						</div>
+						<div className="task-title">
+							<label>Client Name:</label>
+							<input
+								type="text"
+								required
+								value={clientName}
+								onChange={(e) => setClientName(e.target.value)}
 							/>
 						</div>
 						<div className="task-title">

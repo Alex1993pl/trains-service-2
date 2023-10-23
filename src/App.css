@@ -256,6 +256,24 @@
 	fill: #e7ab29;
 }
 
+@media screen and (max-width: 550px) {
+	.update-job label {
+		font-size: 12px !important;
+	}
+
+	.job label {
+		font-size: 12px !important;
+	}
+
+	.task-title label {
+		font-size: 12px !important;
+	}
+
+	.branch-col h3 {
+		font-size: 12px !important;
+	}
+}
+
 @media screen and (max-width: 900px) {
 	#burger-menu {
 		display: flex;
@@ -276,9 +294,17 @@
 	display: none;
 }
 
+.branch-hidden {
+	display: none !important;
+}
+
 .job-locked {
 	pointer-events: none;
 	background-color: #93ce964a;
+}
+.job-locked-pending {
+	pointer-events: none;
+	background-color: #fffc4d9c;
 }
 
 .create-new-task {
@@ -336,8 +362,9 @@
 	justify-content: center;
 	margin-left: 20px;
 	margin-right: 20px;
+	margin-bottom: 50px;
+	width: calc(100% - 40px);
 	flex-direction: column;
-	max-width: 800px;
 	box-sizing: border-box;
 	position: relative;
 }
@@ -351,7 +378,7 @@
 form {
 	border: 1px solid lightgray;
 	border-radius: 5px;
-	padding: 20px;
+	padding: 10px;
 	width: 100%;
 	box-sizing: border-box;
 }
@@ -364,6 +391,10 @@ form {
 	flex-wrap: nowrap;
 	box-sizing: border-box;
 	flex-shrink: 0;
+}
+
+.task-title h3 {
+	margin-left: 10px;
 }
 
 .page-title {
@@ -429,6 +460,7 @@ form {
 
 .job-inner {
 	display: flex;
+	flex-wrap: nowrap;
 	flex-direction: row;
 	flex-shrink: 0;
 }
@@ -439,11 +471,11 @@ form {
 	color: #29aee7;
 	font-weight: bold;
 	width: 70px;
-	text-wrap: nowrap;
 	margin: 4px;
 	margin-top: 8px;
 	box-sizing: border-box;
 	flex-shrink: 0;
+	text-wrap: nowrap;
 }
 
 .job input {
@@ -496,6 +528,7 @@ form {
 	align-items: center;
 	justify-content: center;
 	width: 100%;
+	margin-top: 20px;
 }
 
 .add-job-button {
@@ -582,6 +615,20 @@ form {
 	justify-content: right;
 	align-items: center;
 	width: 100%;
+	margin-left: 10px;
+}
+
+.select-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: right;
+	align-items: center;
+	width: 100%;
+	margin-left: 10px;
+}
+
+.select-container select {
+	height: 30px;
 }
 
 .update-job {
@@ -590,12 +637,81 @@ form {
 	box-sizing: border-box;
 }
 
+.little-margin-top {
+	margin-top: 10px;
+}
+
+.little-margin-left-right {
+	margin-left: 10px;
+	margin-right: 10px;
+	width: calc(100% - 20px);
+}
+
+.branch-container {
+	margin-top: 10px;
+	padding: 10px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	width: 100%;
+}
+
+.branch-container-1 {
+	margin: 10px;
+	padding: 10px !important;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	width: 100%;
+}
+
+.branch-container-inner {
+	margin: 10px;
+	padding: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.branch-container-inner .row {
+	margin: 0;
+}
+
+.branch-col {
+	text-align: center;
+	margin-left: -20px;
+	margin-right: -20px;
+	box-sizing: border-box;
+	width: calc(100% + 20px);
+}
+.branch-row {
+	width: 100%;
+}
+
+.branch-col h3 {
+	color: #29aee7;
+	margin-bottom: 20px;
+}
+
 .update-job label {
 	margin-right: 10px;
 	font-size: 20px;
 	color: #29aee7;
 	font-weight: bold;
-	min-width: 100px;
 	text-wrap: nowrap;
 	margin: 4px;
 	margin-top: 8px;
