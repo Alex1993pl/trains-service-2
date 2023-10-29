@@ -7,6 +7,9 @@ import Navbar from "./Navbar";
 import Tasks from "./Tasks";
 import Task from "./Task";
 import Create from "./Create";
+import Admin from "./Admin";
+import CreateUser from "./CreateUser";
+import User from "./User";
 
 function App() {
 	return (
@@ -19,6 +22,9 @@ function App() {
 					<Routes>
 						<Route path="*" element={<Home />} />
 						<Route path="/tasks" element={<Tasks />} />
+						<Route path="/admin" element={<Admin />} />
+						<Route path="admin/create-user" element={<CreateUser />} />
+						<Route path="/admin/:id" element={<User />} />
 						<Route path="/tasks/:id" element={<Task />} />
 						<Route path="tasks/create" element={<Create />} />
 					</Routes>

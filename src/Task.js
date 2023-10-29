@@ -8,7 +8,7 @@ import { InfinitySpin } from "react-loader-spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Tasks = () => {
+const Task = () => {
 	const { id } = useParams();
 	const nav = useNavigate();
 	const { data: task, error, isPending } = useFetch("http://localhost:8000/tasks/" + id);
@@ -1225,4 +1225,4 @@ const Tasks = () => {
 		</div>
 	);
 };
-export default Tasks;
+export default Task;

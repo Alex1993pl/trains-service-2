@@ -1,5 +1,5 @@
 import ProgressBar from "@ramonak/react-progress-bar";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faFilter,
@@ -10,8 +10,15 @@ import {
 	faCalendarXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
+import { useEffect, useState } from "react";
 
 const TasksList = ({ tasks }) => {
+	const [isAdmin, setIsAdmin] = useState("");
+	const location = useLocation();
+
+	useEffect(() => {
+		setIsAdmin(sessionStorage.getItem("role"));
+	}, [location]);
 	const handleDelayNotification = (task) => {
 		if (handleTaskProgress(task) == 100) {
 			return "";
@@ -370,14 +377,16 @@ const TasksList = ({ tasks }) => {
 					</Link>
 				</div>
 			))}
-			<div className="task-preview">
-				<Link className="task-preview-inner row" to="/tasks/create">
-					<div className="task-preview-section col-lg-12 create-new-task">
-						<FontAwesomeIcon icon={faPlusCircle} className="icon-create" />
-						<h2>Create New Order</h2>
-					</div>
-				</Link>
-			</div>
+			{isAdmin && (
+				<div className="task-preview">
+					<Link className="task-preview-inner row" to="/tasks/create">
+						<div className="task-preview-section col-lg-12 create-new-task">
+							<FontAwesomeIcon icon={faPlusCircle} className="icon-create" />
+							<h2>Create New Order</h2>
+						</div>
+					</Link>
+				</div>
+			)}
 		</div>
 	);
 };

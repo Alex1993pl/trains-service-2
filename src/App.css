@@ -762,3 +762,121 @@ form {
 .spiner {
 	margin: auto;
 }
+
+.login-container {
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	border: 6px solid #29aee7be;
+	background: white;
+	border-radius: 15px;
+	z-index: 2;
+	margin-left: calc(50% - 200px);
+	margin-top: calc(200px);
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+
+.hide {
+	display: none;
+}
+
+.close-button {
+	height: 30px;
+	width: 30px;
+	background-color: transparent;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-right: 10px;
+	cursor: pointer;
+	transition: 1s;
+}
+
+.log-button {
+	height: 50px;
+	width: 200px;
+	background-color: red;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-top: auto;
+	margin-right: auto;
+	cursor: pointer;
+	transition: 1s;
+}
+
+.log-button {
+	background: white;
+	color: #29aee7;
+	border: 2px solid #29aee7;
+	border-radius: 5px;
+	font-size: 18px;
+	font-weight: bold;
+	cursor: pointer;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-top: auto;
+	margin-right: auto;
+	transition: 0.3s;
+	height: 32px;
+	width: 120px;
+	cursor: pointer;
+}
+
+.log-button:hover {
+	background: #29aee7;
+	color: white;
+	border: 2px solid #29aee7;
+	border-radius: 5px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.close-button:hover .icon-close path {
+	fill: rgb(255, 0, 0);
+}
+
+.login-row {
+	height: 40px;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: start;
+}
+
+.login-row label {
+	width: 150px;
+	color: #29aee7;
+	font-weight: bold;
+	margin-top: 6px;
+	font-size: 16px;
+}
+.login-row input {
+	width: 100%;
+	margin-left: 20px;
+	border: 2px solid #29aee788;
+	border-radius: 3px;
+	height: 25px;
+	font-size: 16px;
+	color: #29aee7;
+	font-weight: bold;
+}
+
+.login-row input:focus {
+	border-color: #29aee7;
+	outline: #29aee7;
+}
+
+.icon-close {
+	height: 30px;
+	width: 30px;
+}
+
+.icon-close path {
+	fill: rgba(255, 0, 0, 0.758);
+}
